@@ -1,39 +1,19 @@
-int main {
-
-    iCalculateFinalVelocity();
-    return 0;
-
-}
-
-
-double iVariableInput(sArrVariableName, sArrVariableUnits){
-
-    std::cout << "\n\nPlease define the " << sArrVariableName << " (" << sArrVariableUnits << "):"
-    std::cin >> iVariableInput;
-
-    if (bShowMorePrompts)
-    
-        std::cout << "\n" << sArrVariableName << " = " << iVariableInput << " " << sArrVariableUnits << "." ;
-    
-    }
-
-    return iVariableInput;
-
-}
-
+#include <string>
+ 
 void iCalculateFinalVelocity(){
 
     // Initialization of Local Variables
-    bool bShowMorePrompts = false;
+    bool bShowMorePrompts;
     char sUserResponse;
-    double iInputInitialVelocity;
+    char sYes = 'Y';
     double iInputAcceleration;
+    double iInputInitialVelocity;
     double iInputTime;
 
     // Initialization of Input Variables 
     double iArrVariableValues [] = { iInputInitialVelocity, iInputAcceleration, iInputTime };
-    std::string sArrVariableName [] = { "Initial Velocity", "Acceleration", "Time" };
-    std::string sArrVariableUnits [] = { "m/s", "m/s/s", "s"};  // Should be a selector based as a function of units!
+    string sArrVariableName [] = { "Initial Velocity", "Acceleration", "Time" };
+    string sArrVariableUnits [] = { "m/s", "m/(s*s)", "s"};  // Should be a selector based as a function of units!
 
 
     // Extra feedback for user if needed
@@ -41,7 +21,7 @@ void iCalculateFinalVelocity(){
     std::cin >> sUserResponse;
 
     // Changes boolean of show more prompts:
-    sUserResponse == 'Y' ? bShowMorePrompts : !bShowMorePrompts;
+    sUserResponse == sYes ? bShowMorePrompts : !bShowMorePrompts;
 
     // User Input For Loop
     for (iArrInd = 0, iArrInd < sizeof(iArrVariableValues), iArrInd++){
@@ -61,7 +41,7 @@ double iFinalVelocity (double iInitialVelocity, double iAcceleration, double iTi
 
     // Set Up Arrays According To Values and Types
     double iArrVariables [] = { iInitialVelocity, iAcceleration, iTime };
-    std::string sArrVariables [] = { "Initial Velocity", "Acceleration", "Time" }
+    string sArrVariables [] = { "Initial Velocity", "Acceleration", "Time" }
 
     // Check Input Array Values to Ensure their Consistency
     for (iArrInd = 0, iArrInd < sizeof(iArrVariables), iArrInd++){
@@ -79,7 +59,7 @@ double iFinalVelocity (double iInitialVelocity, double iAcceleration, double iTi
 
 }
 
-void sVariableMismatchStatement(std::string sVariableString, double iVariableType) {
+void sVariableMismatchStatement(string sVariableString, double iVariableType) {
     
     std::cout << "The variable " << sVariableString << " is mismatched with expected type " << iVariableType + ".\n\n";
 
