@@ -44,9 +44,9 @@ string sGetStandardVariableUnits(string sVariableInput){
 }
 
 // Ready for testing
-int iGetNumericalValueFromPrefix(char sUnitPrefix){
+int iGetNumericalValueFromPrefix(char cUnitPrefix){
 
-    switch (sUnitPrefix) {
+    switch (cUnitPrefix) {
 
         // Selects numeric value based on prefix (deka (da) not included due to string length):
         case 'E':
@@ -122,7 +122,6 @@ int iGetNumericalValueFromPrefix(char sUnitPrefix){
         default:
 
             return 10 ** 0;
-            break;
 
     }
 }
