@@ -1,10 +1,9 @@
 #include <cmath>
 
 // CONSTANTS
-// Boolean (b)
 
-
-// Numeric (i)
+// PHYSICAL CONSTANTS
+    //KNOWN
     // Constant -----------------------------------------------Units----------------------------Spelled--Out
     const float iGravConst = 6.673844 * pow(10, -11)            // (m ** 3) / ((s ** 2) * (kg)) --- cubic meters per second squared per kilogram
     const float iGravAccelEarth = 9.80665 * pow(10, 0)          // m/(s ** 2)                   --- meters per second squared
@@ -15,21 +14,64 @@
     const float iMassofProton = 1.672621898 * pow(10, -27)      // kg
     const float iMassofNeutron = 1.974927471 * pow(10, -27)     // kg
     const float iElectronUnitCharge = 1.6021766208 * pow(10, -19) // C
+    const float iAvogadrosNumber = 6.02214 * pow(10, -23);        // atoms / mol
+    const float iMolarGasConst = 8.314 * pow(10, 0);       // J / K mol
+    const float iRhydbergConst = 1.0973731568539 * pow(10, 7); // 1 / m
+    const float iPlancksConst = 6.62607004 * pow(10, -34); // J * s
+    const float iPermeabilityVacuum = 1.257 * pow(10, -6); // H / m
+    const float iPermittivityVacuum = 8.854 * pow(10, -12); // F / m
+
+    // Units
+    const string sGravConst = "[]";
+
+    // Indices
+
+    // Arrays
+
+
+    // DERIVED
+
+
+// PRIMITIVE CONSTANTS
+
+
+// Boolean (b)
+
+
+// Numeric (i)
+
 
     // Conversions
 
-    const short iInchesPerFoot = 12;
-    const short iFeetPerYard = 3;
-    const short iFeetPerMile = 5280;
+        // Time
 
-    const int iMetersPerKM = pow(10, 3);
-    const int iMetersPerMM = pow(10, 6);
-    const int iMetersPerGM = pow(10, 9);    
-    
-    const float icmPerInch = 2.54
+            const short int iSecondsPerMinute = 60;
+            const short int iMinutesPerHour = 60;
+            const short int iHoursPerDay = 24;
+            const short int iDaysPerWeek = 7;
 
-    const short iInchesPerYard = iFeetPerYard * iInchesPerFoot;
-    const int iInchesPerMile = iFeetPerMile * iInchesPerFoot;
+            const short int iSecondsPerHour = iSecondsPerMinute * iMinutesPerHour;
+            const short int iSecondsPerDay = iSecondsPerHour * iHoursPerDay;
+
+
+
+        // Lengths
+
+            const short int iInchesPerFoot = 12;
+            const short int iFeetPerYard = 3;
+            const short int iFeetPerMile = 5280;
+
+            const int iMetersPerKM = pow(10, 3);
+            const int iMetersPerMM = pow(10, 6);
+            const int iMetersPerGM = pow(10, 9);
+
+            const float iAngstromsPerMeter = pow(10, -10);    
+            
+            const float icmPerInch = 2.54;
+            const short float iMetersPerNauticalMile = 1852;
+
+            const short iInchesPerYard = iFeetPerYard * iInchesPerFoot;
+            const int iInchesPerMile = iFeetPerMile * iInchesPerFoot;
     
 // Strings (s)
 
