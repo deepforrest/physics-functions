@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+float iBaseLength;
+float iHeightLength;
+float iTriArea;
+bool bIsEquilateral;
+char cYN;
+
 // Boolean
     bool bIsValid;          // Used often for validation steps
 

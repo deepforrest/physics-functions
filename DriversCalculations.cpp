@@ -5,17 +5,10 @@ using namespace std;
 // Refactor for greater efficiency
 void CalculateTriangleArea(){
 
-    float iBaseLength;
-    float iHeightLength;
-    float iTriArea;
-    bool bIsEquilateral;
-    char cYN;
-
     cout << "\n\nIs the triangle an equilateral triangle?: ";
     cin >> cYN;
 
-    cYN = 'Y' ? bIsEquilateral : !bIsEquilateral;
-
+    bIsEquilateral = (cYN = 'Y') ? true : false;
     
     // Create a loop that will exit and validate that the base length is not a negative number.
     cout << "\n\nWhat is the base length of the triangle?:";

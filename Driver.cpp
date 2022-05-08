@@ -1,5 +1,6 @@
 int main {
 
+    // Import Variable Declarations
     bool bRunProgram = true;
 
     while(bRunProgram){
@@ -12,8 +13,6 @@ int main {
 
     }
 
-    // Main program can figure out what is known and what is unknown and return what you need.
-    iCalculateFinalVelocity();
     return 0;
 
 }
