@@ -22,7 +22,7 @@
     const float iPermittivityVacuum = 8.854 * pow(10, -12); // F / m
 
     // Units
-    const string sGravConst = "[]";
+    const string sGravConst = "[m][m][m]/[s][s][kg]";
 
     // Indices
 
