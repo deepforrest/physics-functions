@@ -1,5 +1,18 @@
 #include <string>
 
+string sCreateUnits(string sNumeratorUnits, string sDenominatorUnits){
+    
+    return "(" + sNumeratorUnits + ")/(" + sDenominatorUnits ")";
+
+}
+
+// Overload for units that don't have a denominator
+string sCreateUnits(string sNumeratorUnits){
+    
+    return sNumeratorUnits;
+    
+}
+
 string sGetStandardVariableUnits(string sVariableInput){
 
     switch (sVariableInput) {
