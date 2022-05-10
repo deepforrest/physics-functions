@@ -94,9 +94,9 @@
 
 
     // Derived Units
-        const string sMUVel = "[m]/[s]";
-        const string sMUAccel = "[m]/([s][s])";
-        const string sMUJerk = "[m]/([s][s][s])"
+        const string sMUVel = sCreateUnits(sMULength, sMUTime);
+        const string sMUAccel = sCreateUnits(sMULength, sMUTime + sMUTime);
+        const string sMUJerk = sCreateUnits(sMULength, sMUTime + sMUTime + sMUTime);
         
         const string sMUForce_03 = "[N]";
         const string sMUForce_02 = "([kg][m])/([s][s])";
@@ -114,11 +114,13 @@
         const string sArrMUPower[4] = {sMUPower_01, sMUPower_02, sMUPower_03, sMUPower_04};
 
 
-        const string sMUMomentum_01 = "[kg][m]/[s]";
+        const string sMUMomentum_01 = sCreateUnits(sMUMass + sMULength, sMUTime);
         const string sMUMomentum_02 = "[J][s]/[m]";
         const string sMUMomentum_03 = "[]";
     
 
     // Derived Units
-    const string sMUGravConst_01 = "([m][m][m])/([s][s][kg])"; // unverified, check against Newtonian Constant!
-    const string sMUGravConst_02 = "[]";
+        const string sMUGravConstNum = sMULength + sMULength + sMULength;
+        const string sMUGravConstDen = sMUTime + sMUTime + sMUMass;
+        const string sMUGravConst_01 = sCreateUnits(sMUGravConstNum, sMUGravConstDen);
+        const string sMUGravConst_02 = "[]";
