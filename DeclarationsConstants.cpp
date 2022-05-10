@@ -22,7 +22,7 @@
     const float iPermittivityVacuum = 8.854 * pow(10, -12); // F / m
 
     // Units
-    const string sGravConst = "[m][m][m]/[s][s][kg]";
+    const string sGravConst = sCreateUnits("[m][m][m]", "[s][s][kg]");
 
     // Indices
 
@@ -94,29 +94,29 @@
 
 
     // Derived Units
-    const string sMUVel = "[m]/[s]";
-    const string sMUAccel = "[m]/([s][s])";
-    const string sMUJerk = "[m]/([s][s][s])"
-    
-    const string sMUForce_03 = "[N]";
-    const string sMUForce_02 = "([kg][m])/([s][s])";
-    const string sArrMUForce[2] = {sMUForce_01, sMUFForce_02};
-    
-    const string sMUWork_01 = "[J]";
-    const string sMUWork_02 = "[N][m]";
-    const string sMUWork_03 = "([kg][m][m])/([s][s])";
-    const string sArrMUWork[3] = {sMUWork_01, sMUWork_02, sMUWork_03};
-    
-    const string sMUPower_01 = "[W]";
-    const string sMUPower_02 = "([kg][m][m])/([s][s][s])";
-    const string sMUPower_03 = "[J]/[s]";
-    const string sMUPower_04 = "([N][m])/[s]";
-    const string sArrMUPower[4] = {sMUPower_01, sMUPower_02, sMUPower_03, sMUPower_04};
+        const string sMUVel = "[m]/[s]";
+        const string sMUAccel = "[m]/([s][s])";
+        const string sMUJerk = "[m]/([s][s][s])"
+        
+        const string sMUForce_03 = "[N]";
+        const string sMUForce_02 = "([kg][m])/([s][s])";
+        const string sArrMUForce[2] = {sMUForce_01, sMUFForce_02};
+        
+        const string sMUWork_01 = "[J]";
+        const string sMUWork_02 = "[N][m]";
+        const string sMUWork_03 = "([kg][m][m])/([s][s])";
+        const string sArrMUWork[3] = {sMUWork_01, sMUWork_02, sMUWork_03};
+        
+        const string sMUPower_01 = "[W]";
+        const string sMUPower_02 = "([kg][m][m])/([s][s][s])";
+        const string sMUPower_03 = "[J]/[s]";
+        const string sMUPower_04 = "([N][m])/[s]";
+        const string sArrMUPower[4] = {sMUPower_01, sMUPower_02, sMUPower_03, sMUPower_04};
 
 
-    const string sMUMomentum_01 = "[kg][m]/[s]";
-    const string sMUMomentum_02 = "[J][s]/[m]";
-    const string sMUMomentum_03 = "[]";
+        const string sMUMomentum_01 = "[kg][m]/[s]";
+        const string sMUMomentum_02 = "[J][s]/[m]";
+        const string sMUMomentum_03 = "[]";
     
 
     // Derived Units
