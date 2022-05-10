@@ -1,9 +1,12 @@
+#include <vector>
+#include <string>
+
 double iVariableInput(string sArrVariableName, string sArrVariableUnits){
 
     std::cout << "\n\nPlease define the " << sArrVariableName << " (" << sArrVariableUnits << "):"
     std::cin >> iVariableInput;
 
-    if (bShowMorePrompts)
+    if (bShowMorePrompts) {
     
         std::cout << "\n" << sArrVariableName << " = " << iVariableInput << " " << sArrVariableUnits << "." ;
     
@@ -13,30 +16,34 @@ double iVariableInput(string sArrVariableName, string sArrVariableUnits){
 
 }
 
+
+/* Type of Sequence
+Function that takes in numbers, uses differential and ratio comparisons, 
+and returns the type of sequence.
+
+*/
 string sTypeOfSequence(double iFirstInput, double iSecondInput, double iThirdInput) {
 
-    if (iThirdInput - iSecondInput = iSecondInput - iFirstInput) {
+    // Calculate Differentials and Ratios to Determine Series Type
+    double iFirstDifferential = iSecondInput - iFirstInput;
+    double iSecondDifferential = iThirdInput - iSecondInput;
 
-        return "Arithmetic";
-    
-    } else if (iThirdInput / iSecondInput = iSecondInput / iFirstInput) {
+    double iFirstRatio = iSecondInput / iFirstInput;
+    double iSecondRatio = iThirdInput / iSecondInput;
 
-        return "Geometric";
-
-    } else {
-
-        return "Neither";
-
-    }
+    return (iFirstDifferential = iSecondDifferential) ? > (iFirstRatio = iSecondRatio) 
+        : "Arithmetic" : "Geometric" : "Neither";
 
 }
 
-double iNextTermsofSequence(double iFirstInput, double iSecondInput, double iThirdInput, string sSeriesType, int iNumOfTerms) {
+
+// In Progress
+double iNextTermsofSequence[](double iFirstInput, double iSecondInput, double iThirdInput, string sSeriesType, int iNumOfTerms) {
 
     // Need to use vector form!!! Cannot use array :(
     double iArrTerms[] = {iFirstInput, iSecondInput, iThirdInput};
 
-    vector< double > iArrTerms;
+    vector< double > iVectTerms;
 
     int iArrayLengthInit = sizeof(iArrTerms) / sizeof(double);
     int iArrayLengthFinal = (sizeof(iArrTerms) + iNumOfTerms) / sizeof(double);
@@ -46,5 +53,7 @@ double iNextTermsofSequence(double iFirstInput, double iSecondInput, double iThi
         iArrTerms[iArrIndex] = iArrTerms[iArrIndex - 1] / iArrTerms[iArrIndex - 2];
 
     }
+
+    return iVectTerms;
 
 }
