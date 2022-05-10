@@ -100,14 +100,19 @@ void LongDivisionSteps(int iDividend, int iDivisor) {
 
     */
 
-    // Parse Dividend as an Array/Vector of Seperate Numbers
+    // Step 1 - See if dividend is divisible by divisor
+    if (iDividend % iDivisor != 0) {
+
+    }
+    
+    // Step 2 - Parse Dividend as an Array/Vector of Seperate Numbers
 
     for (int iArrIndex = iDividendNumOfDigits, iArrIndex >= 0, iArrIndex--) {
 
         iArrDividend[iArrIndex] = iIntermediateDividend % 10;
         iIntermediateDividend /= 10;
 
-    }
+    } 
 
 }
 
