@@ -103,6 +103,9 @@ void LongDivisionSteps(int iDividend, int iDivisor) {
     // Step 1 - See if dividend is divisible by divisor
     if (iDividend % iDivisor != 0) {
 
+        cout << "\n" << iDividend << " is not divisible by " << iDivisor;
+        exit(0);
+
     }
     
     // Step 2 - Parse Dividend as an Array/Vector of Seperate Numbers
