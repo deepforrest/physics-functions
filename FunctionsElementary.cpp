@@ -57,3 +57,36 @@ double iNextTermsofSequence[](double iFirstInput, double iSecondInput, double iT
     return iVectTerms;
 
 }
+
+void LongDivisionSteps(int iDividend, int iDivisor){
+
+    int iRemainder;
+
+    int iArrRemainder[];
+    int iArrDividend[];
+    int iArrDivisor[];
+
+    int iDividendNumOfDigits;
+
+    /*
+    General steps:
+
+        1. Parse the dividend as an array of separate digits
+        2. Try to see if the element of the array is divisible by the divisor.
+            Criteria:  if (digits / divisor >= 1 then proceed)
+        3. Produce first digit of quotient (most likely as array)
+        4. Multiply digit against digits of dividend array
+        5. Subtract out product against digits of dividend array
+        6. Bring down digit from dividend and append it to number.
+        7. Repeat the process until the number of digits in dividend is exhausted.
+
+
+    */
+}
+
+// Complete
+string sIsItDivisible(int iDividend, int iDivisor) {
+
+    return (iDividend % iDivisor = 0) ? "Divisible" : "Not Divisible";
+
+}
