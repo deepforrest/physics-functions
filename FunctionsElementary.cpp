@@ -125,3 +125,30 @@ string sIsItDivisible(int iDividend, int iDivisor) {
     return (iDividend % iDivisor = 0) ? "Divisible" : "Not Divisible";
 
 }
+
+string sUnitNTimes(string sInputUnit, int iOccurences) {
+
+    string sReturnUnit = sInputUnit;
+
+    if (i > 2) {
+
+        for (int i = 0; i < iOccurences; i++) {
+
+            sReturnUnit += sInputUnit;
+
+        }
+
+        return sReturnUnit;
+
+    } else if (i = 1) {
+
+        return sReturnUnit;
+
+    } else {
+
+        cout << iOccurences << " is not a valid number of occurences of " << sInputUnit << "!";
+        exit(0);
+
+    }
+
+}
