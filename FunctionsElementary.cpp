@@ -58,7 +58,22 @@ double iNextTermsofSequence[](double iFirstInput, double iSecondInput, double iT
 
 }
 
-void LongDivisionSteps(int iDividend, int iDivisor){
+int iFindNumofDigits(int iNum) {
+
+    int iIntermediateNum = iNum;
+    int iDigits = 1;
+
+    for (int iDigits = 1; iIntermediateNum > 10; iDigits++) {
+
+        iIntermediateNum /= 10;
+
+    }
+
+    return iDigits;
+
+}
+
+void LongDivisionSteps(int iDividend, int iDivisor) {
 
     int iRemainder;
 
@@ -66,7 +81,8 @@ void LongDivisionSteps(int iDividend, int iDivisor){
     int iArrDividend[];
     int iArrDivisor[];
 
-    int iDividendNumOfDigits;
+    int iDividendNumOfDigits = iFindNumofDigits(iDividend);
+    int iIntermediateDividend = iDividend;
 
     /*
     General steps:
@@ -83,6 +99,16 @@ void LongDivisionSteps(int iDividend, int iDivisor){
 
 
     */
+
+    // Parse Dividend as an Array/Vector of Seperate Numbers
+
+    for (int iArrIndex = iDividendNumOfDigits, iArrIndex >= 0, iArrIndex--) {
+
+        iArrDividend[iArrIndex] = iIntermediateDividend % 10;
+        iIntermediateDividend /= 10;
+
+    }
+
 }
 
 // Complete
