@@ -79,6 +79,7 @@ void LongDivisionSteps(int iDividend, int iDivisor){
         5. Subtract out product against digits of dividend array
         6. Bring down digit from dividend and append it to number.
         7. Repeat the process until the number of digits in dividend is exhausted.
+        8. Give an output with the quotient plus the remainder over the original divisor.
 
 
     */
