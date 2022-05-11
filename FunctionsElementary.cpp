@@ -153,14 +153,17 @@ string sUnitNTimes(string sInputUnit, int iOccurences) {
 
 }
 
+
+// Double check
 short iFindNormalAngle(short iAngleInput) {
 
     // Move to Global
     const int iFullCircularAngle = 360;
-    
+    const int iMinAngle = 0;
 
     int iNumOfRev = 0;
 
+    // Evaluates angles above
     if (iAngleInput > iFullCircularAngle) {
 
         while (iAngleInput > iFullCircularAngle) {
@@ -171,9 +174,9 @@ short iFindNormalAngle(short iAngleInput) {
         }
 
 
-    } else if (iAngleInput < 0) {
+    } else if (iAngleInput < iMinAngle) {
 
-        while (iAngleInput < 0) {
+        while (iAngleInput < iMinAngle) {
 
             iAngleInput += iFullCircularAngle;
             iNumOfRev++;        
@@ -182,7 +185,7 @@ short iFindNormalAngle(short iAngleInput) {
 
     } else {
 
-        skip;
+        continue;
 
     }
 
@@ -194,43 +197,62 @@ string sFindQuadrant(int iInputAngle) {
 
     int iAngle = iFindNormalAngle(iInputAngle);
 
-    if (iAngle % 90 = 0) {
+    int const iMaxAngle = 360;
+    int const iQuadrants = 4
+    int iAnglePerQuadrant = iMaxAngle / iQuadrants;
 
-        iAngle /= 4;
-        string sAxisLabel;
+    if (iAngle % iAnglePerQuadrant = 0) {
 
-        switch (iAngle % 4) {
+        iAngle /= iQuadrants;
+        
+        int iAxis = iAngle % iQuadrants;
 
-            case 0:
 
-                sAxisLabel = "+x";
-                break;
-            
-            case 1:
+        string xAxisLabel = (iAxis = 0) ? "+x" 
+            : (iAxis = 1) ? "+y" 
+            : (iAxis = 2) ? "-x" 
+            : "-y";
 
-                sAxisLabel = "+y";   
-                break;
-
-            case 2:
-
-                sAxisLabel = "-x";
-                break;
-
-            case 3:
-
-                sAxisLabel = "-y";
-                break;
-        }
-
-        return "Along the " + sAxisLabel + " Axis"
+        return "Along the " + sAxisLabel + " Axis";
+    
     } else {
 
-        switch (iAngle) {
+        string sQuadNum = (iAngle < 90) ? "I" 
+            : (iAngle < 180) ? "II" 
+            : (iAngle < 270) ? "III" 
+            : "IV";
+            
+        return "Quadrant " + sQuadNum;
 
-            case 0:90
+    }
 
+}
 
-        }
+int iShapeAngleTotal(int iNumOfSides) {
+
+    if (iNumOfSides < 3) {
+
+        cout << "Not a closed shape!";
+        exit(0);
+    
+    } else { 
+
+        return (iNumOfSides - 2) * 180;
+
+    }
+
+}
+
+int iDegreesPerIntersection(int iNumOfSides) {
+
+    if (iNumOfSides < 3) {
+
+        cout << "Not a closed shape!";
+        exit(0);
+    
+    } else { 
+
+        return iShapeAngleTotal(iNumOfSides) / iNumOfSides;
 
     }
 
