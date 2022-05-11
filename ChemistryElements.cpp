@@ -181,11 +181,6 @@ void LoadChemistryElements(){
     AtomicElement Tennessine("Tennessine", "Ts", 117, 17, , "[]")
     AtomicElement Oganesson("Oganesson", "Og", 118, 18, , "[]")
 
-
-
-    // AtomicElement ();
-
-
 }
 
 class AtomicIsotope: public AtomicElement {
@@ -201,8 +196,8 @@ class AtomicParticle {};
 
 class Triangle {
 
-    short unsigned iSide1, iSide2, iSide3;
-    short unsigned iAngle1, iAngle2, iAngle3;
+    short unsigned iSideAB, iSideBC, iSideCA;
+    short unsigned iAngleABC, iAngleBCA, iAngleCAB;
 
 
 };
