@@ -152,3 +152,86 @@ string sUnitNTimes(string sInputUnit, int iOccurences) {
     }
 
 }
+
+short iFindNormalAngle(short iAngleInput) {
+
+    // Move to Global
+    const int iFullCircularAngle = 360;
+    
+
+    int iNumOfRev = 0;
+
+    if (iAngleInput > iFullCircularAngle) {
+
+        while (iAngleInput > iFullCircularAngle) {
+
+            iAngleInput -= iFullCircularAngle;
+            iNumOfRev++;
+        
+        }
+
+
+    } else if (iAngleInput < 0) {
+
+        while (iAngleInput < 0) {
+
+            iAngleInput += iFullCircularAngle;
+            iNumOfRev++;        
+
+        }
+
+    } else {
+
+        skip;
+
+    }
+
+    return iAngleInput;
+
+}
+
+string sFindQuadrant(int iInputAngle) {
+
+    int iAngle = iFindNormalAngle(iInputAngle);
+
+    if (iAngle % 90 = 0) {
+
+        iAngle /= 4;
+        string sAxisLabel;
+
+        switch (iAngle % 4) {
+
+            case 0:
+
+                sAxisLabel = "+x";
+                break;
+            
+            case 1:
+
+                sAxisLabel = "+y";   
+                break;
+
+            case 2:
+
+                sAxisLabel = "-x";
+                break;
+
+            case 3:
+
+                sAxisLabel = "-y";
+                break;
+        }
+
+        return "Along the " + sAxisLabel + " Axis"
+    } else {
+
+        switch (iAngle) {
+
+            case 0:90
+
+
+        }
+
+    }
+
+}

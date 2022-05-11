@@ -12,9 +12,9 @@ class AtomicElement {
         short iAtomicNum;
 
         // Others
-        short int iNumOfProtons = iAtomicNum;
-        short int iNumOfElectrons = iAtomicNum;
-        short int iNumOfNeutrons = iAtomicNum;
+        short iNumOfProtons = iAtomicNum;
+        short iNumOfElectrons = iAtomicNum;
+        short iNumOfNeutrons = iAtomicNum;
         string sElectronConfig;
         string sPeriodicTableBlock;
 
@@ -40,3 +40,13 @@ class AtomicIsotope: public AtomicElement {
 //Proposed classes:
 
 class AtomicParticle {};
+
+class Triangle {
+
+    short unsigned iSide1, iSide2, iSide3;
+    short unsigned iAngle1, iAngle2, iAngle3;
+
+
+};
+
+class 
