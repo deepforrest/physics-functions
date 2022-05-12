@@ -265,11 +265,13 @@ double iMidPoint2D[2] (double iXPt1, double iXPt2, double iYPt1, double iYPt2) {
 
 }
 
+
 double iMidPoint3D[3] (double iXPt1, double iXPt2, double iYPt1, double iYPt2, double iZPt1, double IZPt2) {
 
     return [(iXPt1 + iXPt2) / 2, (iYPt1 + iYPt2) / 2, (iZPt1 + iZPt2) / 2] ;
 
 }
+
 
 double iMidPointND[](int iNumOfDimensions) {
 
@@ -289,5 +291,133 @@ double iMidPointND[](int iNumOfDimensions) {
 
     }
 
+    return iReturnArray;
+
+}
+
+double iDialate2DPoint[2](double iXCoord, double iYCoord, double iAmp) {
+
+    // Can iPoint be brought outside as a factored multiplier?
+    return {iPoint * iXCoord, iPoint * iYCoord};
+
+}
+
+double iReflect2DPoint[2](double iXCoord, double iYCoord, string sAxis) {
+
+    select (sAxis) {
+
+        case "x-axis":
+
+            // When reflected across the x-axis, the y-coordinate becomes negative
+            return {iXCoord, -iYCoord};
+
+        case "y-axis":
+
+            // When reflected across the y-axis, the x-coordinate becomes negative
+            return {-iXCoord, iYCoord};
+
+        default
+
+            cout << "Axis of reflection not provided!";
+            exit(0);
+
+    }
+
+}
+
+double iDistanceFormula2D(double iXPt2, double iXPt1, double iYPt2, double iYPt1) {
+
+    double iFinalPt, iInitialPt;
+    double iArrFinalPts[2] = {iXPt2, iYPt2};
+    double iArrInitialPts[2] = {iXPt1, iYPt1};
+    double iDistance = 0;
+
+    int iArrayLength = sizeof(iArrFinalPts) / sizeof(double);
+
+    for (iArrIndex = 0; iArrIndex < iArrayLength; iArrIndex++) {
+
+        iDistance += pow(iArrFinalPts[iArrIndex] - iArrInitialPts[iArrIndex], 2);
+
+    }
+
+    // Final distance is taken to the square root of the interior:
+    return pow(iDistance, 1/2);
+
+}
+
+double iDistanceFormula3D(double iXPt2, double iXPt1, double iYPt2, double iYPt1, double iZPt2, double iZPt1) {
+
+    double iFinalPt, iInitialPt;
+    double iArrFinalPts[3] = {iXPt2, iYPt2, iZPt2};
+    double iArrInitialPts[3] = {iXPt1, iYPt1, iZPt1};
+    double iDistance = 0;
+
+    int iArrayLength = sizeof(iArrFinalPts) / sizeof(double);
+
+    for (iArrIndex = 0; iArrIndex < iArrayLength; iArrIndex++) {
+
+        iDistance += pow(iArrFinalPts[iArrIndex] - iArrInitialPts[iArrIndex], 2);
+
+    }
+
+    // Final distance is taken to the square root of the interior:
+    return pow(iDistance, 1/2);
+
+}
+
+// Not sure if this will work or needs to be reconfigured as a void function
+double iDistanceFormulaND(int iNumOfDimensions) {
+
+    double iDistance = 0;
+
+    for (int i = 0; i < iNumOfDimensions, i++) {
+
+        double iFinalPt, iInitialPt;
+
+        cout << "\nEnter the final coordinate for dimension #" << i + 1 << ":";
+        cin >> iFinalPt;
+
+        cout << "\nEnter the initial coordinate for dimension #" << i + 1 << ":";
+        cin >> iInitialPt;
+
+        iDistance += pow(iFinalPt - iInitialPt, 2);
+
+    }
+
+    return pow(iDistance, 1/2);
+    
+}
+
+bool bIsAReducedFraction(int iNumerator, int iDenominator) {
+
+    int iMinNum = (iNumerator > iDenominator) ? iDenominator : iNumerator;
+
+    // Create an array of prime numbers to cycle through to avoid duplicates!
+
+    // Even Number test
+    if (iNumerator % 2 = 0 && iDenominator % 2 = 0) { 
+
+        return false;
+
+    } else if (iMinNum < 3) {
+
+        return true;
+
+    } else {
+
+        // Odd numbers
+        for (iFactor = 3; iFactor < iMinNum; iFactor += 2) {
+
+            if (iNumerator % iFactor = 0 && iDenominator % iFactor = 0) {
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+    return true;
 
 }
