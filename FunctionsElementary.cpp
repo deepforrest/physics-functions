@@ -257,3 +257,37 @@ int iDegreesPerIntersection(int iNumOfSides) {
     }
 
 }
+
+// Is there a way to return a vector of n dimensions instead of making these redundant functions?
+double iMidPoint2D[2] (double iXPt1, double iXPt2, double iYPt1, double iYPt2) {
+
+    return [(iXPt1 + iXPt2) / 2, (iYPt1 + iYPt2) / 2];
+
+}
+
+double iMidPoint3D[3] (double iXPt1, double iXPt2, double iYPt1, double iYPt2, double iZPt1, double IZPt2) {
+
+    return [(iXPt1 + iXPt2) / 2, (iYPt1 + iYPt2) / 2, (iZPt1 + iZPt2) / 2] ;
+
+}
+
+double iMidPointND[](int iNumOfDimensions) {
+
+    double iReturnArray[iNumOfDimensions];
+
+    for (int iIndexToFill = 0; iIndexToFill < iNumOfDimensions; iIndexToFill++) {
+
+        double iPoint01, iPoint02;
+
+        cout << "Please enter Point 1 of Dimension" <<  iIndexToFill + 1 << ":";
+        cin >> iPoint01;
+
+        cout << "Please enter Point 1 of Dimension" <<  iIndexToFill + 1 << ":";
+        cin >> iPoint02;
+
+        iReturnArray[iIndexToFill] = (iPoint01 + iPoint02) / 2;
+
+    }
+
+
+}
