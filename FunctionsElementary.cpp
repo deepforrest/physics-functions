@@ -421,3 +421,59 @@ bool bIsAReducedFraction(int iNumerator, int iDenominator) {
     return true;
 
 }
+
+string sMultiplyFractions(int iNum1, int iDen2, int iNum2, int IDen2) {
+
+    // Definitions
+    int iNum = iNum1 * iNum2;
+    int iDen = iDen1 * iDen2;
+
+    // Throws a DIV0 Error
+    if (iDen = 0) {
+
+        return "Cannot have 0 in the denominator!  Undetermined.";
+
+    }
+
+    string sFrac1 = "(" + to_string(iNum1) + "/" + to_string(iDen1) + ")";
+    string sFrac2 = "(" + to_string(iNum2) + "/" + to_string(iDen2) + ")";
+    string sFracRHS = to_string(iNum) + "/" + to_string(iDen);
+
+    return sFract1 + " * " + sFract2 + " = " +sFracRHS;
+
+}
+
+string sDivideFractions(int iNum1, int iDen2, int iNum2, int IDen2) {
+
+    // By definition it's a matter of flipping the numerator and denominator
+    int iNum = iNum1 * iDen2;
+    int iDen = iDen1 * iNum2;
+
+    // Ensure that DIV0 isn't happening
+    if (iDen = 0) {
+
+        return "Cannot have 0 in the denominator!  Undetermined.";
+
+    }
+
+    // Fraction Setups
+    string sFrac1 = "(" + to_string(iNum1) + "/" + to_string(iDen1) + ")";
+    string sFrac2A = "(" + to_string(iNum2) + "/" + to_string(iDen2) + ")";
+    string sFrac2B = "(" + to_string(iDen2) + "/" + to_string(iNum2) + ")";
+
+    // Statement Setups
+    string sInterStatementLHS = sFract1 + " ÷ " sFract2A;
+    string sInterStatementRHS = sFract1 + " ÷ " sFract2B;
+    string sFinalRHS = to_string(iNum) + "/" + to_string(iDen);
+
+    // Return Statement
+    string sReturnStatement = sInterStatementRHS " = " + sFinalRHS;
+
+    // Shows that by flipping the second fraction and multiplying that the calculation can be performed
+    cout << "\nBy flipping the second fraction and multiplying, we get the following answer:" << endl;
+    cout << "\n" << sInterStatementLHS << " = " << sInterStatementRHS << endl;
+    cout << "\n" << sReturnStatement << endl;
+
+    return sReturnStatement;
+
+}
