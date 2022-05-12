@@ -435,6 +435,7 @@ string sMultiplyFractions(int iNum1, int iDen2, int iNum2, int IDen2) {
 
     }
 
+    // Create the Fractions
     string sFrac1 = "(" + to_string(iNum1) + "/" + to_string(iDen1) + ")";
     string sFrac2 = "(" + to_string(iNum2) + "/" + to_string(iDen2) + ")";
     string sFracRHS = to_string(iNum) + "/" + to_string(iDen);
@@ -476,4 +477,26 @@ string sDivideFractions(int iNum1, int iDen2, int iNum2, int IDen2) {
 
     return sReturnStatement;
 
+}
+
+string iConvertToFraction(double iNum, double iDenom) {
+
+    // Loop to multiply numerators and denominators into decimalless ratios:
+
+    // Calculate the length of the number using log_10 format
+
+    int iNumLen = log10(iNum);
+    int iDenLen = log10(iDen);
+
+    /*
+    while (istype(float)) {
+
+        iNum *= 10;
+        iDen *= 10;
+
+    }
+
+    */
+
+    return "Function not ready."
 }
