@@ -591,3 +591,8 @@ double iLinearYInt (double iVert) {
     return iLinearEqY(0, 0, iVert);
 
 }
+
+double iAbsValue (iNum1) {
+
+    return (iNum1 > 0) ? iNum1 : -iNum1;
+}
