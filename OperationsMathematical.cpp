@@ -89,3 +89,53 @@ double iPolynomial(double iVar, int iHighestPower) {
     return iResult;
 
 }
+
+double iDeterminant22 (double iX1, double iX2, double iY1, double iY2) {
+    
+    return iX1 * iY2 - iX2 * iY1;
+
+}
+
+double iArrCrossProduct(double iI1, double iJ1, double iK1, double iI2, double iJ2, double iJ3)[3] {
+
+    double iDeterminantI = iDeterminant22(iJ1, iJ2, iK1, iK2);
+    double iDeterminantJ = iDeterminant22(iI1, iI2, iK1, iK2);
+    double iDeterminantK = iDeterminant22(iI1, iI2, iJ1, iJ2);
+
+    return {iDeterminantI, iDeterminantJ, iDeterminantK};
+
+}
+
+double iDotProduct(double iI1, double iJ1, double iK1, double iI2, double iJ2, double iJ3) {
+
+    return iI1 * iI2 + iJ1 * iJ2 + iK1 * iK2;
+
+}
+
+double bIsPrime (int iNum) {
+
+   bEvenNumberTest(iNum);
+
+    for (int iDivisor = 3; iDivisor < iNum / 2; iDivisor +=2) {
+
+        if (iNum % iDivisor = 0) {
+
+            return false;
+        }
+
+    }
+
+    return true;
+
+}
+
+double bEvenNumberTest(int iNum) {
+
+    if (iNum % 2 = 0) {
+
+        return false;
+
+    }
+
+
+}
