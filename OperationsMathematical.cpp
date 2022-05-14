@@ -112,15 +112,17 @@ double iDotProduct(double iI1, double iJ1, double iK1, double iI2, double iJ2, d
 
 }
 
-double bIsPrime (int iNum) {
+bool bIsPrime (int iNum) {
 
-   bEvenNumberTest(iNum);
+   !bEvenNumberTest(iNum);
+   int iMidPoint = round(iNum / 2);
 
-    for (int iDivisor = 3; iDivisor < iNum / 2; iDivisor +=2) {
+    for (int iDivisor = 3; iDivisor < iMidPoint; iDivisor +=2) {
 
         if (iNum % iDivisor = 0) {
 
             return false;
+
         }
 
     }
@@ -129,13 +131,19 @@ double bIsPrime (int iNum) {
 
 }
 
-double bEvenNumberTest(int iNum) {
+bool bEvenNumberTest(int iNum) {
 
     if (iNum % 2 = 0) {
 
-        return false;
+        return true;
 
     }
 
+
+}
+
+bool bIsLessThan(int iNum, int iNum2) {
+
+    return (iNum < iNum2);
 
 }
