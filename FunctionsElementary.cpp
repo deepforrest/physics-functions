@@ -507,7 +507,7 @@ double iLinearEqX (double iY, double iVert, double iSlope) {
     // Validations
     if (iSlope = 0) {
 
-        cout << "Invalid slope!" << lend;
+        cout << "Invalid slope!" << endl;
         exit(0);
     }
 
